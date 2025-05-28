@@ -135,7 +135,7 @@ class Call:
         assistant = await group_assistant(self, chat_id)
         audio_stream_quality = await get_audio_bitrate(chat_id)
         video_stream_quality = await get_video_bitrate(chat_id)
-        call_config = GroupCallConfig(auto_start=False)
+        call_config = GroupCallConfig(auto_start=True)
         if video:
             stream = MediaStream(
                 link,
@@ -162,7 +162,7 @@ class Call:
         assistant = await group_assistant(self, chat_id)
         audio_stream_quality = await get_audio_bitrate(chat_id)
         video_stream_quality = await get_video_bitrate(chat_id)
-        call_config = GroupCallConfig(auto_start=False)
+        call_config = GroupCallConfig(auto_start=True)
         stream = (
             MediaStream(
                 file_path,
@@ -182,7 +182,7 @@ class Call:
 
     async def stream_call(self, link):
         assistant = await group_assistant(self, config.LOG_GROUP_ID)
-        call_config = GroupCallConfig(auto_start=False)
+        call_config = GroupCallConfig(auto_start=True)
         await assistant.play(
             config.LOG_GROUP_ID,
             MediaStream(link),
@@ -198,7 +198,7 @@ class Call:
             language = await get_lang(chat_id)
             _ = get_string(language)
         except Exception:
-            _ = get_string("en")
+            _ = get_string("fa")
         try:
             try:
                 get = await app.get_chat_member(chat_id, userbot.id)
@@ -288,7 +288,7 @@ class Call:
         assistant = await group_assistant(self, chat_id)
         audio_stream_quality = await get_audio_bitrate(chat_id)
         video_stream_quality = await get_video_bitrate(chat_id)
-        call_config = GroupCallConfig(auto_start=False)
+        call_config = GroupCallConfig(auto_start=True)
         if video:
             stream = MediaStream(
                 link,
@@ -383,7 +383,7 @@ class Call:
             check[0].get("user_id")
             check[0]["played"] = 0
             video = True if str(streamtype) == "video" else False
-            call_config = GroupCallConfig(auto_start=False)
+            call_config = GroupCallConfig(auto_start=True)
             if "live_" in queued:
                 n, link = await youtube.video(videoid, True)
                 if n == 0:

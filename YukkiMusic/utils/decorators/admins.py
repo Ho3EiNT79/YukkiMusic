@@ -21,7 +21,6 @@ from YukkiMusic.utils.database import (
     get_lang,
     is_active_chat,
     is_commanddelete_on,
-    is_maintenance,
     is_nonadmin_chat,
 )
 
@@ -30,9 +29,6 @@ from ..formatters import int_to_alpha
 
 def AdminRightsCheck(mystic):
     async def wrapper(client, message):
-        if not await is_maintenance():
-            if message.from_user.id not in SUDOERS:
-                return
         if await is_commanddelete_on(message.chat.id):
             try:
                 await message.delete()
@@ -42,7 +38,7 @@ def AdminRightsCheck(mystic):
             language = await get_lang(message.chat.id)
             _ = get_string(language)
         except Exception:
-            _ = get_string("en")
+            _ = get_string("fa")
         if message.sender_chat:
             upl = InlineKeyboardMarkup(
                 [
@@ -55,7 +51,7 @@ def AdminRightsCheck(mystic):
                 ]
             )
             return await message.reply_text(_["general_4"], reply_markup=upl)
-        if message.command[0][0] == "c":
+        if message.command[0][0] in ["c", "ک"]:
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
                 return await message.reply_text(_["setting_12"])
@@ -83,10 +79,6 @@ def AdminRightsCheck(mystic):
 
 def AdminActual(mystic):
     async def wrapper(client, message):
-        if not await is_maintenance():
-            if message.from_user.id not in SUDOERS:
-                return
-
         if await is_commanddelete_on(message.chat.id):
             try:
                 await message.delete()
@@ -97,7 +89,7 @@ def AdminActual(mystic):
             language = await get_lang(message.chat.id)
             _ = get_string(language)
         except Exception:
-            _ = get_string("en")
+            _ = get_string("fa")
 
         if message.sender_chat:
             upl = InlineKeyboardMarkup(
@@ -141,14 +133,8 @@ def ActualAdminCB(mystic):
             language = await get_lang(query.message.chat.id)
             _ = get_string(language)
         except Exception:
-            _ = get_string("en")
+            _ = get_string("fa")
 
-        if not await is_maintenance():
-            if query.from_user.id not in SUDOERS:
-                return await query.answer(
-                    _["maint_4"],
-                    show_alert=True,
-                )
 
         if query.message.chat.type == ChatType.PRIVATE:
             return await mystic(client, query, _)

@@ -19,7 +19,7 @@ We are always looking for contributors to help us translate YukkiMusic into more
    You can start by editing the [`en.yml`](https://github.com/TheTeamVivek/YukkiMusic/blob/master/strings%2Flangs%2Fen.yml) file, which contains the English language strings, and translate it into your language.
 
 2. **Submit Your Translation:**  
-   Once you've completed your translation, send the edited file to us at [@TheTeamVk](https://t.me/TheTeamVk) or open a pull request in our GitHub repository.
+   Once you've completed your translation, send the edited file to us at [@TheTeamVk](https://t.me/ChannelHarmony) or open a pull request in our GitHub repository.
 
 ### Points to Remember While Editing:
 

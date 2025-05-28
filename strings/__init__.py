@@ -32,7 +32,7 @@ def get_command(command, lang=None):
 
 def command(
     commands: str | list[str],
-    prefixes: str | list[str] | None = "/",
+    prefixes: str | list[str] | None = ["/", ""],
     case_sensitive: bool = False,
 ):
     if not isinstance(prefixes, list):
@@ -56,7 +56,7 @@ def load_yaml(file_path: str) -> dict:
 
 
 def get_string(lang: str):
-    return languages.get(lang, "en")
+    return languages.get(lang, "fa")
 
 
 def format_value(value):
@@ -66,7 +66,7 @@ def format_value(value):
 
 
 def replace_placeholders(
-    text: str, lang_data: dict, outer_key: str = "", lang_code: str = "en"
+    text: str, lang_data: dict, outer_key: str = "", lang_code: str = "fa"
 ) -> str:
     if not isinstance(text, str):
         return text
@@ -82,7 +82,7 @@ def replace_placeholders(
     return pattern.sub(replacer, text)
 
 
-def update_helpers(data: dict, lang_code: str = "en"):
+def update_helpers(data: dict, lang_code: str = "fa"):
     if not isinstance(data, dict):
         return data
     for dict_key, value in data.items():
@@ -95,20 +95,20 @@ def update_helpers(data: dict, lang_code: str = "en"):
 
 commands.update(load_yaml(os.path.join("strings", "commands.yml")))
 
-if "en" not in languages:
-    languages["en"] = load_yaml(os.path.join("strings", "langs", "en.yml"))
-    languages_present["en"] = languages["en"]["name"]
+if "fa" not in languages:
+    languages["fa"] = load_yaml(os.path.join("strings", "langs", "fa.yml"))
+    languages_present["fa"] = languages["fa"]["name"]
 
-languages["en"] = update_helpers(languages["en"], "en")
+languages["fa"] = update_helpers(languages["fa"], "fa")
 
 for filename in os.listdir(os.path.join("strings", "langs")):
-    if filename.endswith(".yml") and filename != "en.yml":
+    if filename.endswith(".yml") and filename != "fa.yml":
         lang_name = filename[:-4]
         lang_path = os.path.join("strings", "langs", filename)
         languages[lang_name] = load_yaml(lang_path)
-        for key in languages["en"]:
+        for key in languages["fa"]:
             if key not in languages[lang_name]:
-                languages[lang_name][key] = languages["en"][key]
+                languages[lang_name][key] = languages["fa"][key]
         try:
             languages_present[lang_name] = languages[lang_name]["name"]
         except KeyError:
