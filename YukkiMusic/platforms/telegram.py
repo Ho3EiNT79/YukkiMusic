@@ -158,14 +158,14 @@ class Telegram:
                     completed_size = convert_bytes(current)
                     speed = convert_bytes(speed)
                     text = f"""
-**{app.mention} Telagram Media Downloader**
+**📥 {app.mention} دانلودر رسانه‌های تلگرام**
 
-**Total file size:** {total_size}
-**Completed:** {completed_size} 
-**Percentage:** {percentage[:5]}%
+📦 **حجم کل فایل:** {total_size}  
+✅ **تکمیل شده:** {completed_size}  
+📊 **درصد پیشرفت:** {percentage[:5]}٪  
 
-**Speed:** {speed}/s
-**Elapsed Time:** {eta}"""
+🚀 **سرعت دانلود:** {speed}/s  
+⏱️ **زمان سپری‌شده:** {eta}"""
                     try:
                         await mystic.edit_text(text, reply_markup=upl)
                     except Exception:
@@ -184,7 +184,7 @@ class Telegram:
                     progress=progress,
                 )
                 await mystic.edit_text(
-                    "Sucessfully Downloaded\n Processing File Now..."
+                    "✅ دانلود با موفقیت انجام شد.  \n🔄 در حال پردازش فایل..."
                 )
                 downloader.pop(message.id, None)
             except Exception:

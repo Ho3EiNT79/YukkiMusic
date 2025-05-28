@@ -20,6 +20,7 @@ loop = asyncio.get_event_loop_policy().get_event_loop()
 
 
 def install_req() -> tuple[str, str, int, int]:
+    return
     async def install_requirements():
         process = await asyncio.create_subprocess_shell(
             "uv pip install --system -e .",
@@ -38,6 +39,7 @@ def install_req() -> tuple[str, str, int, int]:
 
 
 def git():
+    return
     if config.GIT_TOKEN:
         git_username = config.UPSTREAM_REPO.split("com/")[1].split("/")[0]
         temp_repo = config.UPSTREAM_REPO.split("https://")[1]
