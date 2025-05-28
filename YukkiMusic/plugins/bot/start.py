@@ -261,8 +261,11 @@ async def welcome(client, message: Message):
         await add_served_chat(chat_id)
     for member in message.new_chat_members:
         try:
-            language = await get_lang(message.chat.id)
-            _ = get_string(language)
+            try:
+                language = await get_lang(message.chat.id)
+                _ = get_string(language)
+            except Exception:
+                _ = get_string("fa")
             if member.id == app.id:
                 chat_type = message.chat.type
                 if chat_type != ChatType.SUPERGROUP:

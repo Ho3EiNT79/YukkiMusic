@@ -18,193 +18,193 @@ START_COMMAND:
 PING_COMMAND:
   ar: ["بينج", "بنج"]
   ckb: ["پینگ"]
-  en: ["ping", "alive", "aalive"]
+  en: ["ping", "alive", "aalive", "پینگ"]
   tr: ["ping"]
 
 HELP_COMMAND:
   ar: ["مساعده"]
   ckb: ["یارمەتی", "فەرمانەکان"]
-  en: ["help"]
+  en: ["help", "راهنما"]
   tr: ["yardim", "yardım"]
 
 SETTINGS_COMMAND:
   ar: ["اعدادات", "الاعدادت", "اعدادات", "الاعدادات"]
   ckb: ["ڕێکخستنەکان", "ڕێکخستن"]
-  en: ["settings", "setting"]
+  en: ["settings", "setting", "پنل موزیک"]
   tr: ["ayarlar", "ayar"]
 
 RELOAD_COMMAND:
   ar: ["ريلود"]
   ckb: ["نوێکردنەوەی ئەدمین", "ڕیلۆد"]
-  en: ["admincache", "reload"]
+  en: ["admincache", "reload", "ریلود"]
   tr: ["admincache", "reload"]
 
 GSTATS_COMMAND:
   ar: ["الاحصائيات", "احصائيات"]
   ckb: ["ئاماری گشتی", "ئامارەکان"]
-  en: ["gstats"]
+  en: ["gstats", "آمار جهانی"]
   tr: ["gstats"]
 
 STATS_COMMAND:
   ar: ["إحصائيات"]
   ckb: ["ئامار"]
-  en: ["stats"]
+  en: ["stats", "آمار"]
   tr: ["stats"]
 
 LANGUAGE_COMMAND:
   ar: ["لغه", "اللغه"]
   ckb: ["زمان", "زمانەکان"]
-  en: ["lang", "language", "langs"]
+  en: ["lang", "language", "langs", "زبان"]
   tr: ["dil", "diller"]
 
 PLAY_COMMAND:
   ar: ["تشغيل", "شغل"]
   ckb: ["پەخشکردنی", "لێدانی", "پلەی", "کارکردنی", "پەخشکردن"]
-  en: ["play", "vplay", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce"]
+  en: ["play", "vplay", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce", "پخش", "وپخش", "ک پحش", "ک وپخش", "پخش اجباری", "وپخش اجباری", "ک پخش اجباری", "ک وپخش اجباری"]
   tr: ["oynat", "voynat", "coynat"]
 
 PLAYMODE_COMMAND:
   ar: ["وضع تشغيل", "المصرحين"]
   ckb: ["دۆخی لێدان", "دۆخی کارکردن", "دۆخی پەخشکردن"]
-  en: ["playmode"]
+  en: ["playmode", "نوع پخش"]
   tr: ["oynatmamodu"]
 
 CHANNELPLAY_COMMAND:
   ar: ["ربط قناة"]
   ckb: ["گرێدانی کەناڵ"]
-  en: ["channelplay"]
+  en: ["channelplay", "کانال پخش"]
   tr: ["kanaloynat"]
 
 STREAM_COMMAND:
   ar: ["لايف"]
   ckb: ["تەوژم", "لایڤ"]
-  en: ["stream", "cstream", "streamforce", "cstreamforce"]
+  en: ["stream", "cstream", "streamforce", "cstreamforce", "لایو", "ک لایو", "لایو اجباری", "ک لایو اجباری"]
   tr: ["stream", "cstream"]
 
 PLAYLIST_COMMAND:
   ar: ["قائمة التشغيل"]
   ckb: ["لیستی پەخشکردن", "لیستی گۆرانی"]
-  en: ["playlist"]
+  en: ["playlist", "لیست پحش"]
   tr: ["oynatmalistesi"]
 
 PLAY_PLAYLIST_COMMAND:
   ar: ["شغل قائمتي", "تشغيل قائمة التشغيل", "تشغيل قائمتي", "تشغيل القائمة"]
   ckb: ["لێدانی لیست", "لێدانی لیستەکەم", "لێدانی لیستی گۆرانی", "پلەی لیستی گۆرانی", "پەخشکردنی لیستی پەخشکردن"]
-  en: ["playplaylist", "vplayplaylist"]
+  en: ["playplaylist", "vplayplaylist", "پخش لیست پخش", "وپخش لیست پخش"]
   tr: ["oynatmalistesinioynat", "voynatmalistesinioynat"]
 
 DELETE_PLAYLIST_COMMAND:
   ar: ["حذف قائمة التشغيل"]
   ckb: ["سرینەوەی لیستی پەخشکردن", "سڕینەوەی لیستی پەخشکردن"]
-  en: ["deleteplaylist", "delplaylist"]
+  en: ["deleteplaylist", "delplaylist", "حذف لیست پخش"]
   tr: ["oynatmalistesinisil"]
 
 ADD_PLAYLIST_COMMAND:
   ar: ["اضافة لقائمة التشغيل"]
   ckb: ["زیادکردنی لیستی گۆرانی", "زیادکردنی لیستی پەخشکردن"]
-  en: ["addplaylist"]
+  en: ["addplaylist", "افزودن به لیست پخش"]
   tr: ["pekle"]
 
 QUEUE_COMMAND:
   ar: ["قائمة الانتظار", "قائمة", "تشغيل", "تشغيل الآن", "تشغيل قائمة", "قائمة التشغيل"]
   ckb: ["ڕیزکراو", "لێدراو", "لیستی چاوەڕوانی", "لێدراوەکان", "پەخشکراو"]
-  en: ["queue", "cqueue", "cplayer", "playing", "cplaying", "player"]
+  en: ["queue", "cqueue", "cplayer", "playing", "cplaying", "player", "صف پخش", "ک صف پخش"]
   tr: ["csira", "sira"]
 
 SONG_COMMAND:
   ar: ["تنزيل", "بحث", "يوت"]
   ckb: ["گۆرانی", "ڤیدیۆ", "داگرتن"]
-  en: ["song", "video"]
+  en: ["song", "video", "دانلود آهنگ", "دانلود موزیک", "دانلود فیلم", "دانلود ویدیو"]
   tr: ["sarki", "muzik", "indir"]
 
 LYRICS_COMMAND:
   ar: ["كلمات"]
   ckb: ["ژێرنووس"]
-  en: ["lyrics"]
+  en: ["lyrics", "متن آهنگ", "متن ترانه"]
   tr: ["sarkisozu"]
 
 AUTH_COMMAND:
   ar: ["رفع ادمن"]
   ckb: ["زیادکردنی ئەدمین"]
-  en: ["auth"]
+  en: ["auth", "ترفیع موزیک"]
   tr: ["yetki", "yetkiver"]
 
 UNAUTH_COMMAND:
   ar: ["تنزيل ادمن"]
   ckb: ["لادانی ئەدمین"]
-  en: ["unauth"]
+  en: ["unauth", "عزل موزیک"]
   tr: ["yetkial"]
 
 AUTHUSERS_COMMAND:
   ar: ["الادمنيه"]
   ckb: ["ئەدمینەکان"]
-  en: ["authusers"]
+  en: ["authusers", "لیست ترفیع"]
   tr: ["yetkililer"]
 
 PAUSE_COMMAND:
   ar: ["وقف"]
   ckb: ["وەستانی کاتی", "وسبە"]
-  en: ["pause", "cpause"]
+  en: ["pause", "cpause", "مکث", "توقف", "ک مکث", "ک مکث"]
   tr: ["duraklat", "cduraklat", "kduraklat"]
 
 RESUME_COMMAND:
   ar: ["كمل", "كملي"]
   ckb: ["دەستپێکردنەوە"]
-  en: ["resume", "cresume"]
+  en: ["resume", "cresume", "ادامه", "ک ادامه"]
   tr: ["devam", "cdevam", "kdevam"]
 
 MUTE_COMMAND:
   ar: ["اسكت"]
   ckb: ["بێدەنگکردن"]
-  en: ["cmute", "mute"]
+  en: ["cmute", "mute", "بیصدا", "بی صدا", "ک بیصدا", "ک بی صدا"]
   tr: ["sustur", "csustur", "ksustur"]
 
 UNMUTE_COMMAND:
   ar: ["اتكلم"]
   ckb: ["لادانی بێدەنگی"]
-  en: ["unmute", "cunmute"]
+  en: ["unmute", "cunmute", "باصدا", "ک باصدا"]
   tr: ["unmute", "cunmute"]
 
 STOP_COMMAND:
   ar: ["ايقاف", "انهاء"]
   ckb: ["وەستان", "ڕاگرتن"]
-  en: ["stop", "end", "cstop", "cend"]
+  en: ["stop", "end", "cstop", "cend", "اتمام", "ک اتمام"]
   tr: ["durdur", "cdurdur", "kdurdur"]
 
 SKIP_COMMAND:
   ar: ["تخطي"]
   ckb: ["دواتر", "تێپەڕاندن", "سکیپ"]
-  en: ["skip", "cskip"]
+  en: ["skip", "cskip", "بعدی", "ک بعدی"]
   tr: ["atla", "catla", "katla"]
 
 SHUFFLE_COMMAND:
   ar: ["خلط"]
   ckb: ["تیکەڵکردن"]
-  en: ["shuffle", "cshuffle"]
+  en: ["shuffle", "cshuffle", "تصادفی", "ک تصادفی"]
   tr: ["ckaristir", "ckaristir", "karistir"]
 
 LOOP_COMMAND:
   ar: ["تكرار"]
   ckb: ["دووبارەکردنەوە"]
-  en: ["loop", "cloop"]
+  en: ["loop", "cloop", "تکرار", "ک تکرار"]
   tr: ["cdongu", "dongu"]
 
 SEEK_COMMAND:
   ar: ["تقديم"]
   ckb: ["گەڕان"]
-  en: ["seek", "cseek"]
+  en: ["seek", "cseek", "بعدی", "ک بعدی"]
   tr: ["sar", "csar"]
 
 SEEK_BACK_COMMAND:
   ar: ["ارجع_الى_الخلف", "بحث_الى_الخلف"]
   ckb: ["گەڕانەوە"]
-  en: ["seekback", "cseekback"]
+  en: ["seekback", "cseekback", "عقب", ک عقب]
   tr: ["ilerisar", "gerisar", "cilerisar", "cgerisar"]
 
 REBOOT_COMMAND:
   ar: ["اعاده تشغيل"]
   ckb: ["ڕێستارت"]
-  en: ["reboot"]
+  en: ["reboot", "ریستارت"]
   tr: ["yenidenbaslat"]
 
 ADDSUDO_COMMAND:
