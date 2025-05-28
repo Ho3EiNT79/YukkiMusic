@@ -398,3 +398,6 @@ if TELEGRAM_VIDEO_URL:
                 "[ERROR] - Your TELEGRAM_VIDEO_URL url is wrong. Please ensure that it starts with https://"
             )
             _sys.exit()
+
+
+FOOTER_INLINE = "꯭𝐇꯭ 𝐀꯭ 𝐑꯭ 𝐌꯭ 𝐎꯭ 𝐍꯭ 𝐘꯭  ꯭  ꯭𝐌 ꯭𝐔 ꯭𝐒 ꯭𝐢 ꯭𝐂"

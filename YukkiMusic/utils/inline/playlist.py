@@ -9,6 +9,8 @@
 #
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+import config
+
 
 def botplaylist_markup(_):
     buttons = [
@@ -22,6 +24,11 @@ def botplaylist_markup(_):
         [
             InlineKeyboardButton(text=_["PL_B_4"], callback_data="PM"),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
+        ],
+        [
+            InlineKeyboardButton(
+                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
+            ),
         ],
     ]
     return buttons
