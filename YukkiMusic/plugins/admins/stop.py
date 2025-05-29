@@ -34,7 +34,7 @@ async def stop_music(cli, message: Message):
             return
     if not len(message.command) < 2:
         if EXTRA_PLUGINS:
-            if not message.command[0][0] in ["c", "ک"] and not message.command[0][0] in ["e", "ی"]:
+            if not message.command[0][0] == "c" and not message.command[0][0] == "e":
                 filter = " ".join(message.command[1:])
                 deleted = await delete_filter(message.chat.id, filter)
                 if deleted:
@@ -51,7 +51,7 @@ async def stop_music(cli, message: Message):
         language = await get_lang(message.chat.id)
         _ = get_string(language)
     except Exception:
-        _ = get_string("fa")
+        _ = get_string("en")
 
     if message.sender_chat:
         upl = InlineKeyboardMarkup(
@@ -66,7 +66,7 @@ async def stop_music(cli, message: Message):
         )
         return await message.reply_text(_["general_4"], reply_markup=upl)
 
-    if message.command[0][0] in ["c", "ک"]:
+    if message.command[0][0] == "c":
         chat_id = await get_cmode(message.chat.id)
         if chat_id is None:
             return await message.reply_text(_["setting_12"])

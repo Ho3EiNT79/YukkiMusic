@@ -433,7 +433,7 @@ async def admin_callback(client, query, _):
             if (duration_played - duration_to_skip) <= 10:
                 bet = seconds_to_min(duration_played)
                 return await query.answer(
-                    f"ربات نمی‌تواند جلو بزند چون مدت زمان مورد نظر بیشتر از طول آهنگ است.\n🔘 در حال حاضر: **{bet}** دقیقه پخش شده از **{duration}** دقیقه کل آهنگ.",
+                    f"Bot is unable to seek because duration exceeds.\n\nCurrently played:** {bet}** minutes out of **{duration}** minutes.",
                     show_alert=True,
                 )
             to_seek = duration_played - duration_to_skip + 1
@@ -441,7 +441,7 @@ async def admin_callback(client, query, _):
             if (duration_seconds - (duration_played + duration_to_skip)) <= 10:
                 bet = seconds_to_min(duration_played)
                 return await query.answer(
-                    f"ربات نمی‌تواند جلو بزند چون مدت زمان مورد نظر بیشتر از طول آهنگ است.\n🔘 در حال حاضر: **{bet}** دقیقه پخش شده از **{duration}** دقیقه کل آهنگ.",
+                    f"Bot is unable to seek because duration exceeds.\n\nCurrently played:** {bet}** minutes out of **{duration}** minutes.",
                     show_alert=True,
                 )
             to_seek = duration_played + duration_to_skip + 1
@@ -714,10 +714,10 @@ async def stop_download(client, query, _):
     message_id = query.message.id
     task = lyrical.get(message_id)
     if not task:
-        return await query.answer("دانلود قبلاً کامل شده است...", show_alert=True)
+        return await query.answer("Download Already Completed..", show_alert=True)
     if task.done() or task.cancelled():
         return await query.answer(
-            "دانلود قبلاً کامل شده یا لغو شده است.",
+            "Downloading already Completed or Cancelled.",
             show_alert=True,
         )
     if not task.done():
@@ -727,11 +727,11 @@ async def stop_download(client, query, _):
                 lyrical.pop(message_id)
             except Exception:
                 pass
-            await query.answer("دانلود لغو شد.", show_alert=True)
+            await query.answer("Downloading Cancelled", show_alert=True)
             return await query.edit_message_text(
-                f"دانلود توسط {query.from_user.mention} لغو شد."
+                f"Downloading cancelled by {query.from_user.mention}"
             )
         except Exception:
-            return await query.answer("❗ توقف دانلود ناموفق بود.", show_alert=True)
+            return await query.answer("Failed to stop downloading", show_alert=True)
 
-    await query.answer("❌ عملیات مورد نظر شناسایی نشد.", show_alert=True)
+    await query.answer("Failed to Recognise Task", show_alert=True)

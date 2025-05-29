@@ -56,7 +56,7 @@ def load_yaml(file_path: str) -> dict:
 
 
 def get_string(lang: str):
-    return languages.get(lang, "fa")
+    return languages.get(lang, "en")
 
 
 def format_value(value):
@@ -66,7 +66,7 @@ def format_value(value):
 
 
 def replace_placeholders(
-    text: str, lang_data: dict, outer_key: str = "", lang_code: str = "fa"
+    text: str, lang_data: dict, outer_key: str = "", lang_code: str = "en"
 ) -> str:
     if not isinstance(text, str):
         return text
@@ -82,7 +82,7 @@ def replace_placeholders(
     return pattern.sub(replacer, text)
 
 
-def update_helpers(data: dict, lang_code: str = "fa"):
+def update_helpers(data: dict, lang_code: str = "en"):
     if not isinstance(data, dict):
         return data
     for dict_key, value in data.items():
@@ -95,20 +95,20 @@ def update_helpers(data: dict, lang_code: str = "fa"):
 
 commands.update(load_yaml(os.path.join("strings", "commands.yml")))
 
-if "fa" not in languages:
-    languages["fa"] = load_yaml(os.path.join("strings", "langs", "fa.yml"))
-    languages_present["fa"] = languages["fa"]["name"]
+if "en" not in languages:
+    languages["en"] = load_yaml(os.path.join("strings", "langs", "en.yml"))
+    languages_present["en"] = languages["en"]["name"]
 
-languages["fa"] = update_helpers(languages["fa"], "fa")
+languages["en"] = update_helpers(languages["en"], "en")
 
 for filename in os.listdir(os.path.join("strings", "langs")):
-    if filename.endswith(".yml") and filename != "fa.yml":
+    if filename.endswith(".yml") and filename != "en.yml":
         lang_name = filename[:-4]
         lang_path = os.path.join("strings", "langs", filename)
         languages[lang_name] = load_yaml(lang_path)
-        for key in languages["fa"]:
+        for key in languages["en"]:
             if key not in languages[lang_name]:
-                languages[lang_name][key] = languages["fa"][key]
+                languages[lang_name][key] = languages["en"][key]
         try:
             languages_present[lang_name] = languages[lang_name]["name"]
         except KeyError:

@@ -25,6 +25,7 @@ from YukkiMusic.utils.database import (
     get_playtype,
     is_active_chat,
     is_commanddelete_on,
+    is_maintenance,
     is_served_private_chat,
 )
 from YukkiMusic.utils.inline import botplaylist_markup
@@ -48,6 +49,10 @@ def PlayWrapper(command):
                 ]
             )
             return await message.reply_text(_["general_4"], reply_markup=upl)
+
+        if await is_maintenance() is False:
+            if message.from_user.id not in SUDOERS:
+                return
 
         if PRIVATE_BOT_MODE:
             if not await is_served_private_chat(message.chat.id):
@@ -82,7 +87,7 @@ def PlayWrapper(command):
                     caption=_["playlist_1"],
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
-        if message.command[0][0] in ["c", "ک"]:
+        if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
                 return await message.reply_text(_["setting_12"])
@@ -113,14 +118,14 @@ def PlayWrapper(command):
                 else:
                     if message.from_user.id not in admins:
                         return await message.reply_text(_["play_4"])
-        if message.command[0][0] in ["v", "و"]:
+        if message.command[0][0] == "v":
             video = True
         else:
             if "-v" in message.text:
                 video = True
             else:
                 video = True if message.command[0][1] == "v" else None
-        if message.command[0][-1] in ["e", "ی"]:
+        if message.command[0][-1] == "e":
             if not await is_active_chat(chat_id):
                 return await message.reply_text(_["play_18"])
             fplay = True

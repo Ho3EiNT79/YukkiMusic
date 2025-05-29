@@ -24,7 +24,7 @@ def language(mystic):
             language = await get_lang(message.chat.id)
             language = get_string(language)
         except Exception:
-            language = get_string("fa")
+            language = get_string("en")
         if not await is_maintenance():
             if message.from_user.id not in SUDOERS:
                 if message.chat.type == ChatType.PRIVATE:
@@ -46,7 +46,7 @@ def languageCB(mystic):
             language = await get_lang(query.message.chat.id)
             language = get_string(language)
         except Exception:
-            language = get_string("fa")
+            language = get_string("en")
         if not await is_maintenance():
             if query.from_user.id not in SUDOERS:
                 if query.message.chat.type == ChatType.PRIVATE:
@@ -67,7 +67,7 @@ def LanguageStart(mystic):
             language = await get_lang(message.chat.id)
             language = get_string(language)
         except Exception:
-            language = get_string("fa")
+            language = get_string("en")
         return await mystic(_, message, language)
 
     return wrapper

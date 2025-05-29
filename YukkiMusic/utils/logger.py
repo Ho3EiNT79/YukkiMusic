@@ -19,7 +19,7 @@ async def play_logs(message, streamtype):
             language = await get_lang(message.chat.id)
             _ = get_string(language)
         except Exception:
-            _ = get_string("fa")
+            _ = get_string("en")
 
         if message.chat.username:
             chatusername = f"@{message.chat.username}"

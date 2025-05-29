@@ -9,8 +9,6 @@
 #
 from pyrogram.types import InlineKeyboardButton
 
-import config
-
 
 def song_markup(_, vidid):
     buttons = [
@@ -26,11 +24,6 @@ def song_markup(_, vidid):
         ],
         [
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
-        ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-            ),
         ],
     ]
     return buttons

@@ -29,7 +29,6 @@ autoend = {}
 
 
 async def auto_leave():
-    return
     if config.AUTO_LEAVING_ASSISTANT:
         from YukkiMusic.core.userbot import assistants
 
@@ -70,7 +69,6 @@ async def auto_leave():
 
 
 async def auto_end():
-    return
     if await is_autoend():
         await asyncio.sleep(30)
         for chat_id, timer in list(autoend.items()):
@@ -117,7 +115,6 @@ async def auto_end():
 
 
 async def do_and_do():
-    return
     while True:
         await asyncio.gather(auto_leave(), auto_end())
         await asyncio.sleep(1)

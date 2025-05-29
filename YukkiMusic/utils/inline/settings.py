@@ -10,8 +10,6 @@
 
 from pyrogram.types import InlineKeyboardButton
 
-import config
-
 
 def setting_markup(_):
     buttons = [
@@ -29,11 +27,6 @@ def setting_markup(_):
         ],
         [
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
-        ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-            ),
         ],
     ]
     return buttons
@@ -87,11 +80,6 @@ def audio_quality_markup(
                 callback_data="settingsback_helper",
             ),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
-        ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-            ),
         ],
     ]
     return buttons
@@ -168,11 +156,6 @@ def video_quality_markup(
             ),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-            ),
-        ],
     ]
     return buttons
 
@@ -204,11 +187,6 @@ def cleanmode_settings_markup(
             ),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-            ),
-        ],
     ]
     return buttons
 
@@ -231,11 +209,6 @@ def auth_users_markup(_, status: bool | str = None):
                 callback_data="settingsback_helper",
             ),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
-        ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-            ),
         ],
     ]
     return buttons
@@ -275,11 +248,6 @@ def playmode_users_markup(
                 callback_data="settingsback_helper",
             ),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
-        ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-            ),
         ],
     ]
     return buttons

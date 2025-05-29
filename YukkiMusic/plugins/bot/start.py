@@ -42,7 +42,7 @@ from YukkiMusic.utils.inline import private_panel, start_pannel
 
 
 @app.on_message(
-    command("START_COMMAND") & filters.private & ~BANNED_USERS
+    filters.command(get_command("START_COMMAND")) & filters.private & ~BANNED_USERS
 )
 @LanguageStart
 async def start_comm(client, message: Message, _):
@@ -261,11 +261,8 @@ async def welcome(client, message: Message):
         await add_served_chat(chat_id)
     for member in message.new_chat_members:
         try:
-            try:
-                language = await get_lang(message.chat.id)
-                _ = get_string(language)
-            except Exception:
-                _ = get_string("fa")
+            language = await get_lang(message.chat.id)
+            _ = get_string(language)
             if member.id == app.id:
                 chat_type = message.chat.type
                 if chat_type != ChatType.SUPERGROUP:

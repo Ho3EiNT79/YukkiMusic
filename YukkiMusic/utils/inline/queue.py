@@ -10,8 +10,6 @@
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-import config
-
 
 def queue_markup(
     _,
@@ -31,12 +29,7 @@ def queue_markup(
                 text=_["CLOSEMENU_BUTTON"],
                 callback_data="close",
             ),
-        ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-            ),
-        ],
+        ]
     ]
     dur = [
         [
@@ -53,11 +46,6 @@ def queue_markup(
             InlineKeyboardButton(
                 text=_["CLOSEMENU_BUTTON"],
                 callback_data="close",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
             ),
         ],
     ]
@@ -77,12 +65,7 @@ def queue_back_markup(_, CPLAY):
                     text=_["CLOSE_BUTTON"],
                     callback_data="close",
                 ),
-            ],
-            [
-                InlineKeyboardButton(
-                    text=config.FOOTER_INLINE, url=config.SUPPORT_CHANNEL
-                ),
-            ],
+            ]
         ]
     )
     return upl
